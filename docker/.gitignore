@@ -1,0 +1,10 @@
+.env
+
+# mosquitto
+mosquitto.passwd
+
+# node-red
+.npm
+node_modules
+package-lock.json
+**/nodered/.config.*
