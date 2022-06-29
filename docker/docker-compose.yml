@@ -1,0 +1,45 @@
+version: '3'
+
+networks:
+    1dt305-net:
+        driver: bridge
+
+services:
+    mosquitto:
+        image: eclipse-mosquitto:latest
+        container_name: 1dt305-mosquitto
+        ports:
+            - 8080:1883
+        volumes:
+            - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+            - ./mosquitto.passwd:/mosquitto/passwd
+            - ./mosquitto.acl:/mosquitto/acl
+        networks:
+            - 1dt305-net
+
+    influxdb:
+        image: influxdb:1.8
+        container_name: 1dt305-influxdb
+        ports:
+            - 8096:8096
+        environment:
+            INFLUXDB_DB: "nodered"
+            INFLUXDB_ADMIN_ENABLED: "true"
+            INFLUXDB_ADMIN_USER: "nodered"
+            INFLUXDB_ADMIN_PASSWORD: ${INFLUXDB_ADMIN_PASSWORD}
+        networks:
+            - 1dt305-net
+        volumes:
+            - ./data/influxdb:/var/lib/influxdb
+    
+    nodered:
+        image: nodered/node-red:latest
+        container_name: 1dt305-nodered
+        ports:
+            - 1880:1880
+        networks:
+            - 1dt305-net
+        volumes:
+            - ./data/nodered:/data
+
+

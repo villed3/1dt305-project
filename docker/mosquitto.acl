@@ -1,0 +1,10 @@
+# all can read
+pattern read $SYS/#
+
+# helium write access to own topic only
+user helium
+topic helium/#
+
+# nodered read-only on all topics
+user nodered
+topic read #
