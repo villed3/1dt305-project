@@ -5,6 +5,10 @@ pattern read $SYS/#
 user helium
 topic helium/#
 
+# edge client write access to own topic only
+user soilly
+topic soilly/#
+
 # nodered read-only on all topics
 user nodered
 topic read #
