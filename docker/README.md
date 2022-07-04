@@ -40,6 +40,8 @@ And create the policy with something like this:
 > create retention policy thirtydays on nodered duration 30d replication 1 default
 ```
 
+Update the nodes in Node-RED that use Mosquitto and InfluxDB to use the correct password. Also update the Mosquitto password in the ```env.py``` file in the source code for the edge device.
+
 ## Remove
 
 If you would like to remove all containers, do:
