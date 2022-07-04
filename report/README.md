@@ -86,6 +86,12 @@ Using the "empty" template will generate a ```boot.py``` and a ```main.py``` fil
 
 ## Putting everything together
 
+The image below shows the exact wiring I did with my sensors. I used the pushbutton for debug purposes and is not required.
+
+![Sketch](images/sketch.png)
+
+*NOTE: In the diagram I added an NPN transistor as switch for the power supply, but in reality I used an NMOS and a PMOS transistor (forming a CMOS NOT gate). I am therefore not entirely sure if the wiring in the diagram is proper.*
+
 ## Cloud platform
 
 ## The code
