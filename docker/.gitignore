@@ -8,3 +8,4 @@ mosquitto.passwd
 node_modules
 package-lock.json
 **/nodered/.config.*
+**/influxdb/*

@@ -18,10 +18,10 @@ Start the stack from this directory with:
 $ docker compose -p 1dt305-project up -d
 ```
 
-Rename the ```mosquitto.passwd.example``` to ```mosquitto.passwd``` and change the user password of the helium user. Encrypt the passwords from withing the mosquitto container with:
+Rename the ```mosquitto.passwd.example``` to ```mosquitto.passwd``` and change the user password of the helium user. Encrypt the passwords from within the mosquitto container with:
 
 ```bash
-$ mosquitto_passwd -U mosquitto
+$ mosquitto_passwd -U mosquitto/passwd
 ```
 
 Restart the container after encrypting the passwords.
@@ -40,6 +40,11 @@ And create the policy with something like this:
 > create retention policy thirtydays on nodered duration 30d replication 1 default
 ```
 
+Measurements can be cleared in InfluxDB using:
+```sql
+> drop series from /.*/
+```
+
 Update the nodes in Node-RED that use Mosquitto and InfluxDB to use the correct password. Also update the Mosquitto password in the ```env.py``` file in the source code for the edge device.
 
 ## Remove
@@ -55,3 +60,4 @@ $ docker compose -p 1dt305-project down
 ### Node-RED modules:
 - [Dashboard](https://flows.nodered.org/node/node-red-dashboard)
 - [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb)
+
