@@ -1,4 +1,4 @@
-# Smart Soil Monitor
+# Smart Plant Monitor
 
 **Vilgot Ledstam (vl222nf)**
 
