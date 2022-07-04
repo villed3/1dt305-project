@@ -124,10 +124,13 @@ The processor on the Heltec board itself consumes a little more, especially when
 If we assume that the device is active for about 10 seconds, including connecting to WiFi, gathering data for one second, transmitting and then going to sleep for 5 minutes minus the time spent awake, we get can calculate an approximated power consumption for the device, assuming also that the averaging consumption of the processor is 200mA.
 
 $$
-((0.3 + 1 + 15 + 15 + 200) + (0.06 + 0.003 + 200) * 9 + (0.06 + 0.003 + 0.01) * 290) / 300 = 6.843457
+\frac{(0.3 + 1 + 15 + 15 + 200) + (0.06 + 0.003 + 200) * 9 + (0.06 + 0.003 + 0.01) * 290)}{300}
+$$
+$$
+= 6.843457
 $$
 
-So with an approximate consumption of 7 mA, a battery with 3000mAh capacity would last for about 430 hours or almost 18 days. There are of course ways to make things even more efficient, but it is a good start.
+With an approximate consumption of 7 mA, a battery with 3000mAh capacity would last for about 430 hours or almost 18 days. There are of course ways to make things even more efficient, but it is a good start.
 
 ## Cloud platform
 
