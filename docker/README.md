@@ -45,6 +45,8 @@ Measurements can be cleared in InfluxDB using:
 > drop series from /.*/
 ```
 
+Update the nodes in Node-RED that use Mosquitto and InfluxDB to use the correct password. Also update the Mosquitto password in the ```env.py``` file in the source code for the edge device.
+
 ## Remove
 
 If you would like to remove all containers, do:
