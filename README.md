@@ -1,6 +1,6 @@
 # 1DT305 Project
 
-Project for course 1DT305 Applied IoT at Linnæus University. See [the project report](https://github.com/villed3/1dt305-project/tree/main/report) for more information about the project.
+Project for course 1DT305 Applied IoT at [Linnæus University](https://lnu.se/en/). See [the project report](https://github.com/villed3/1dt305-project/tree/main/report) for more information about the project.
 
 ## Project Idea: Smart plant monitor
 
