@@ -2,7 +2,7 @@
 
 **Vilgot Ledstam (vl222nf)**
 
-![Setup](images/setup.jpg)
+![Setup](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/setup.jpg)
 
 This is an IoT project with a soil monitor connected to a web dashboard, using several different environmental sensors to allow for estimates of water consumption of either a potted plant or an outdoor plant. It is connected to the Internet using WiFi, but could just as well have been connected using LoRa. This tutorial will describe how the project was carried out and how it can be replicated.
 
@@ -28,14 +28,14 @@ The components used in this project are listed below. Their usage and where to b
 
 | Picture                                                        | Component                                                | Description                                                                                                                                                                                                                                                                                            | Can be bought from                                                                                                                                          |
 | -------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Heltec WiFi LoRa 32 (V2)](images/heltec_wifi_lora_32_v2.png) | Heltec WiFi LoRa 32 (V2) (w. pins and antenna)           | Microcontroller (MCU) with an [ESP32](https://en.wikipedia.org/wiki/ESP32) microprocessor.  Has a built-in 128x64 OLED display, a battery connector and a LoRa chip (with external antenna). Wireless capabilites include LoRa, WiFi, and Bluetooth (supports low energy). Requires soldering of pins. | [Amazon SE](https://www.amazon.se/gp/product/B08243JHMW/)<br/>€33.99                                                                                        |
-| ![Breadboard](images/breadboard.jpg)                           | Breadbord (full-size)                                    | Solderless breadboard with 840 connections and polarity indicators. A smaller sized board could suffice.                                                                                                                                                                                               | [Electrokit](https://www.electrokit.com/en/product/solderless-breadboard-840-tie-points-2/)<br/>*(€7.38)*                                                   |
-| ![Jumper wires](images/wires.jpg)                              | Jumper wires                                             | Wires to connect sensor with MCU on the breadboard. Only male-male wires are required. Shorter length breadbord wires can also be used to reduce clutter.                                                                                                                                              | [AZ-Delivery](https://www.az-delivery.de/products/40-stk-jumper-wire-male-to-male-20-zentimeter)<br/>(40-pack, male-male) <br/>*(€3.79)*                    |
-| ![Soil moisture sensor](images/soil.jpg)                       | Soil moisture sensor (w. comparator module)              | Capacitive soil moisture sensor with a comparator module. A threshold can be set with the potentiometer on the comparator to provide a digital output, high or low, if the threshold is met or not. The comparator module also outputs the analog value directly.                                      | [AZ-Delivery](https://www.az-delivery.de/products/feuchtigkeitssensor-modul)<br/>*(€4.49)*                                                                  |
-| ![DHT11](images/dht11.jpg)                                     | DHT11 temperature and humidity sensor                    | Temperature and humidity sensor with low precision, connected with GPIO. Only used for humidity in this project, since the barometer provides temperature measuring.                                                                                                                                   | [AZ-Delivery](https://www.az-delivery.de/products/dht-11-temperatursensor-modul)<br/>*(€4.99)*                                                              |
-| ![BMP180 barometer](images/bmp180.jpg)                         | BMP180 barometer                                         | A high precision barometer, with I2C interface. Also measures temperature. The unit used in this project requires soldering.                                                                                                                                                                           | [AZ-Delivery](https://www.az-delivery.de/products/azdelivery-gy-68-bmp180-barometrischer-sensor-luftdruck-modul-fur-arduino-und-raspberry-pi)<br/>*(€5.49)* |
-| ![Rain sensor](images/rain.jpg)                                | (Optional)<br/>Rain sensor                               | Capacitive rain sensor, with identical comparator module as the soil moisture sensor. Only applicable for outdoor use, but still used in this project.                                                                                                                                                 | [AZ-Delivery](https://www.az-delivery.de/products/regen-sensor-modul)<br/>*(€3.99)*                                                                         |
-| ![NPN transistor](images/npn.jpg)                              | (Optional)<br/>NPN transistor or equivalent CMOS circuit | Used as a digital switch for the power supply, to save power and extend the lifespan of the capacitive sensors when not in use. A CMOS inverter constructed from NMOS and PMOS transistors are used in this project instead, simply because that is what I had on hand.                                | [Electrokit](https://www.electrokit.com/produkt/mpsa14-to-92-npn-30v-500ma/)<br/>*(€0.54)*                                                                  |
+| ![Heltec WiFi LoRa 32 (V2)](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/heltec_wifi_lora_32_v2.png) | Heltec WiFi LoRa 32 (V2) (w. pins and antenna)           | Microcontroller (MCU) with an [ESP32](https://en.wikipedia.org/wiki/ESP32) microprocessor.  Has a built-in 128x64 OLED display, a battery connector and a LoRa chip (with external antenna). Wireless capabilites include LoRa, WiFi, and Bluetooth (supports low energy). Requires soldering of pins. | [Amazon SE](https://www.amazon.se/gp/product/B08243JHMW/)<br/>€33.99                                                                                        |
+| ![Breadboard](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/breadboard.jpg)                           | Breadbord (full-size)                                    | Solderless breadboard with 840 connections and polarity indicators. A smaller sized board could suffice.                                                                                                                                                                                               | [Electrokit](https://www.electrokit.com/en/product/solderless-breadboard-840-tie-points-2/)<br/>*(€7.38)*                                                   |
+| ![Jumper wires](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/wires.jpg)                              | Jumper wires                                             | Wires to connect sensor with MCU on the breadboard. Only male-male wires are required. Shorter length breadbord wires can also be used to reduce clutter.                                                                                                                                              | [AZ-Delivery](https://www.az-delivery.de/products/40-stk-jumper-wire-male-to-male-20-zentimeter)<br/>(40-pack, male-male) <br/>*(€3.79)*                    |
+| ![Soil moisture sensor](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/soil.jpg)                       | Soil moisture sensor (w. comparator module)              | Capacitive soil moisture sensor with a comparator module. A threshold can be set with the potentiometer on the comparator to provide a digital output, high or low, if the threshold is met or not. The comparator module also outputs the analog value directly.                                      | [AZ-Delivery](https://www.az-delivery.de/products/feuchtigkeitssensor-modul)<br/>*(€4.49)*                                                                  |
+| ![DHT11](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/dht11.jpg)                                     | DHT11 temperature and humidity sensor                    | Temperature and humidity sensor with low precision, connected with GPIO. Only used for humidity in this project, since the barometer provides temperature measuring.                                                                                                                                   | [AZ-Delivery](https://www.az-delivery.de/products/dht-11-temperatursensor-modul)<br/>*(€4.99)*                                                              |
+| ![BMP180 barometer](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/bmp180.jpg)                         | BMP180 barometer                                         | A high precision barometer, with I2C interface. Also measures temperature. The unit used in this project requires soldering.                                                                                                                                                                           | [AZ-Delivery](https://www.az-delivery.de/products/azdelivery-gy-68-bmp180-barometrischer-sensor-luftdruck-modul-fur-arduino-und-raspberry-pi)<br/>*(€5.49)* |
+| ![Rain sensor](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/rain.jpg)                                | (Optional)<br/>Rain sensor                               | Capacitive rain sensor, with identical comparator module as the soil moisture sensor. Only applicable for outdoor use, but still used in this project.                                                                                                                                                 | [AZ-Delivery](https://www.az-delivery.de/products/regen-sensor-modul)<br/>*(€3.99)*                                                                         |
+| ![NPN transistor](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/npn.jpg)                              | (Optional)<br/>NPN transistor or equivalent CMOS circuit | Used as a digital switch for the power supply, to save power and extend the lifespan of the capacitive sensors when not in use. A CMOS inverter constructed from NMOS and PMOS transistors are used in this project instead, simply because that is what I had on hand.                                | [Electrokit](https://www.electrokit.com/produkt/mpsa14-to-92-npn-30v-500ma/)<br/>*(€0.54)*                                                                  |
 
 You will of course also need a USB-A to micro USB cable for programming and powering the Heltec board, but we all usually already have one.
 
@@ -65,30 +65,30 @@ I chose to use [Visual Studio Code](https://code.visualstudio.com/) as IDE for t
 
 You can download Visual Studio Code from [here](https://code.visualstudio.com/Download). In order to install the Pymakr plugin, open VS Code, click the "Extensions" icon in the side panel and search for "pymakr". I installed the preview version as mentioned but the main might work as well.
 
-![Install pymakr](images/code-pymakr.png)
+![Install pymakr](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-pymakr.png)
 
 <!-- Once installed, you will find the Pymakr icon in the side panel, which reveals the Pymakr options. You create a project by clicking "Create Project" or the + sign next to "Projects".
 
-![Select template](images/code-pymakr-proj.png)
+![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-pymakr-proj.png)
 
 After selecting a directory where the project shall be located, you will be prompted to enter a project name and select a template.
 
-![Select template](images/code-projname.png)
-![Select template](images/code-template.png)
+![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-projname.png)
+![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-template.png)
 
 Using the "empty" template will generate a ```boot.py``` and a ```main.py``` file, which you can see in the file view in the side panel. -->
 
 When in the project folder (found on [GitHub](https://github.com/villed3/1dt305-project)), the project will show up in the Pymakr view. You will need to add the device to the project to be able to interact with it, by connecting it and clicking "ADD DEVICES" underneath the project.
 
-![Add device](images/code-add.png)
+![Add device](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-add.png)
 
 If you have the correct driver installed it will show up as "Silicon Labs CP210x...". Simply select it and click "OK".
 
-![Select device](images/code-select.png)
+![Select device](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-select.png)
 
 Hovering over the newly added device in the Pymakr view will reveal options for the device. You first click the connect icon to connect to the device. Then you will be able to upload the code by clicking the upload icon.
 
-![Upload code](images/code-upload.png)
+![Upload code](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-upload.png)
 
 After the upload has finished, the new code can be run by clicking the reset button on the physical board (labelled "RST").
 
@@ -110,7 +110,7 @@ I used the pushbutton on the right side of the breadboard for debug purposes (se
 
 It is important that all sensors are connected to the 3.3V pins, even though some of them can operate on 5V. This is to save some power but also ensuring that nothing breaks on the MCU, since not all input pins can handle more than 3.3V. The digital connections to the board requires pull-up or pull-down resistors, but luckily the MCU has these built in and can easily be enabled in software.
 
-![Sketch](images/sketch.png)
+![Sketch](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/sketch.png)
 
 To save energy I did as mentioned connect a switch to the capacitive sensors, but not to the others. The barometer has very low idle consumption so that is not a big problem, and the temperature sensor would get bad readings if not constantly powered.
 
@@ -162,7 +162,7 @@ As MQTT broker, I decided to use [Mosquitto](https://mosquitto.org/). It is a ve
 
 I chose to use [Node-RED](https://nodered.org/) as data collector because it is very powerful and can operate as both data collector and data presenter, removing the need of yet another application. It has a visual interface where "flows" are created with nodes that perform actions, such as collecting, filtering, modifying and visualizing data. It is perhaps not the most intuitive tool but it is very flexible and also has good integrations with both MQTT and InfluxDB. The image below shows what my flow looks like.
 
-![Node-RED flow](images/nodered-flow.png)
+![Node-RED flow](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/nodered-flow.png)
 
 It starts from the left where MQTT data is collected. The data is parsed and stored to the database, while also a signal is sent to trigger loading of the new data from the database. The right-most nodes in the flow image are the UI elements that appear in the visualization dashboard.
 
@@ -293,7 +293,7 @@ For the dashboard I created an element that shows the latest values as well as s
 
 The data that is received from the device is displayed immediately when received, which for the sample displayed in the image below is every 5 minutes. Currently, the database is set to keep the data for 30 days, but in a practical scenario you might want to have an ever longer duration or somehow store averages in a separate database.
 
-![Node-RED flow](images/nodered-dashboard.png)
+![Node-RED flow](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/nodered-dashboard.png)
 
 *The graphs in the image displays all the data instead of the particular timeframe. I believe it is a bug with the graphing tool, so it could be fixed by having to queries that retrieve limited amounts of entries.*
 
@@ -305,5 +305,5 @@ The next step would be to apply this project with LoRa instead of WiFi and use a
 
 Despite that, I am satisfied with the work I have done. I have learned a lot through this project and I hope others may learn something from this report.
 
-![Setup](images/setup.jpg)
-![Assembled circuit](images/assembled.jpg)
+![Setup](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/setup.jpg)
+![Assembled circuit](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/assembled.jpg)
