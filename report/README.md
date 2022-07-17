@@ -1,6 +1,6 @@
 # Smart Plant Monitor
 
-**Vilgot Ledstam (vl222nf)**
+**LNU-ID: vl222nf**
 
 ![Setup](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/setup.jpg)
 
