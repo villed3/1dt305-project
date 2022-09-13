@@ -67,17 +67,6 @@ You can download Visual Studio Code from [here](https://code.visualstudio.com/Do
 
 ![Install pymakr](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-pymakr.png)
 
-<!-- Once installed, you will find the Pymakr icon in the side panel, which reveals the Pymakr options. You create a project by clicking "Create Project" or the + sign next to "Projects".
-
-![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-pymakr-proj.png)
-
-After selecting a directory where the project shall be located, you will be prompted to enter a project name and select a template.
-
-![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-projname.png)
-![Select template](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-template.png)
-
-Using the "empty" template will generate a ```boot.py``` and a ```main.py``` file, which you can see in the file view in the side panel. -->
-
 When in the project folder (found on [GitHub](https://github.com/villed3/1dt305-project)), the project will show up in the Pymakr view. You will need to add the device to the project to be able to interact with it, by connecting it and clicking "ADD DEVICES" underneath the project.
 
 ![Add device](https://raw.githubusercontent.com/villed3/1dt305-project/main/report/images/code-add.png)
